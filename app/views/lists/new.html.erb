@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <div class="row justify-content-center ">
+    <div class="col-6">
+      <h2>Créer une nouvelle liste</h2>
+
+      <%= simple_form_for (@list) do |f| %>
+              <%= f.input :name %>
+              <%= f.input :image %>
+              <%= f.submit class:"btn btn-primary" %>
+              <% end %>
+
+    </div>
+
+  </div>
+
+</div>

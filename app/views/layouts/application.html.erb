@@ -11,6 +11,17 @@
   </head>
 
   <body>
+
+   <nav class="d-flex justify-content-between bg-light p-3">
+     <div >
+     <%= link_to "CINEMA", lists_path, class:"h5 text-decoration-none " %>
+     </div>
+
+      <div>
+     <%= link_to "Nouvelle liste", new_list_path%>
+    </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,31 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i0.wp.com/www.acap-cinema.com/wp-content/uploads/2020/01/annuaire-des-salles.jpg?fit=2133%2C1200&ssl=1);">
+  <div class="container">
+    <h1>Ca va  <strong>listzer</strong> all <strong>night long</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Nouvelle liste
+    </button>
+    <%= render "modal" %>
+  </div>
+
+</div>
+
+
+<div class="container">
+<h1>Listes</h1>
+
+<div class = "cards">
+  <% @lists.each do |list|%>
+
+  <%= link_to list_path(list) do %>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=list.image%>)">
+        <%= list.name %>
+    </div>
+    <% end %>
+    <% end %>
+
+</div>
+
+</div>

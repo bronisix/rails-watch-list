@@ -1,0 +1,30 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=@list.image %>);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+
+  <div class = "row mt-2">
+
+    <% @list.movies.each do |movie|  %>
+      <div class="col-3">
+
+        <div class="card w-100" style="width: 18rem;">
+          <img class="card-img-top h-75" src="<%=movie.poster_url%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"> <%= movie.title %></h5>
+            <p class="card-text"> <%= movie.overview %></p>
+
+          </div>
+            <%= link_to "Retirer", list_bookmark_path(movie), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'badge text-bg-secondary' %>
+        </div>
+
+      </div>
+
+    <% end %>
+  </div>
+
+
+  <%= link_to "ajouter un film", new_list_bookmark_path(@list) %>
+</div>
